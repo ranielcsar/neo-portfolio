@@ -1,27 +1,29 @@
 import { createRouter, createMemoryHistory } from 'vue-router'
 import HomeView from '@/views/home/_index.vue'
 
+const base = (path: string) => `neo-portfolio/${path}`
+
 const router = createRouter({
-  history: createMemoryHistory('neo-portfolio'),
+  history: createMemoryHistory(),
   linkActiveClass: 'active-link',
   routes: [
     {
-      path: '/',
+      path: base('/'),
       name: 'home',
       component: HomeView
     },
     {
-      path: '/projetos',
+      path: base('/projetos'),
       name: 'projects',
       component: () => import('@/views/projects/_index.vue')
     },
     {
-      path: '/experiencias',
+      path: base('/experiencias'),
       name: 'experiences',
       component: () => import('@/views/experiences/_index.vue')
     },
     {
-      path: '/curriculo',
+      path: base('/curriculo'),
       name: 'curriculum',
       component: () => import('@/views/curriculum/_index.vue')
     }
