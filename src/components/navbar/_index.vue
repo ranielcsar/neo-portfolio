@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-const path = window?.location.pathname
 </script>
 
 <template>
@@ -10,10 +9,10 @@ const path = window?.location.pathname
     <nav
       class="relative flex items-center border-t-4 border-black bg-white lg:m-auto lg:w-1/2 lg:border-4"
     >
-      <router-link :to="`${path}`">Home</router-link>
-      <router-link :to="`${path}projetos`">Projetos</router-link>
-      <router-link :to="`${path}experiencias`">Experiências</router-link>
-      <router-link :to="`${path}curriculo`">Currículo</router-link>
+      <router-link :to="`/`">Home</router-link>
+      <router-link :to="`/projetos`">Projetos</router-link>
+      <router-link :to="`/experiencias`">Experiências</router-link>
+      <router-link :to="`/curriculo`">Currículo</router-link>
     </nav>
   </footer>
 </template>
