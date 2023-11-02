@@ -1,9 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createMemoryHistory } from 'vue-router'
 import HomeView from '@/views/home/_index.vue'
+import ProjectsView from '@/views/projects/_index.vue'
+import ExperiencesView from '@/views/experiences/_index.vue'
+import CurriculumView from '@/views/curriculum/_index.vue'
 const path = window?.location.pathname
 
 const router = createRouter({
-  history: createWebHistory(path ?? ''),
+  history: createMemoryHistory(path ?? ''),
   linkActiveClass: 'active-link',
   routes: [
     {
@@ -14,17 +17,17 @@ const router = createRouter({
     {
       path: `/projetos`,
       name: 'projects',
-      component: () => import('@/views/projects/_index.vue')
+      component: ProjectsView
     },
     {
       path: `/experiencias`,
       name: 'experiences',
-      component: () => import('@/views/experiences/_index.vue')
+      component: ExperiencesView
     },
     {
       path: `/curriculo`,
       name: 'curriculum',
-      component: () => import('@/views/curriculum/_index.vue')
+      component: CurriculumView
     }
   ],
   scrollBehavior() {
