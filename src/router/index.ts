@@ -1,28 +1,28 @@
-import { createRouter, createMemoryHistory, useRoute } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/home/_index.vue'
-const route = useRoute()
+const path = window?.location.pathname
 
 const router = createRouter({
-  history: createMemoryHistory(`${route?.fullPath || '/'}`),
+  history: createWebHistory(path ?? ''),
   linkActiveClass: 'active-link',
   routes: [
     {
-      path: `${route?.fullPath || '/'}`,
+      path: '/',
       name: 'home',
       component: HomeView
     },
     {
-      path: `${route?.fullPath || '/'}projetos`,
+      path: `/projetos`,
       name: 'projects',
       component: () => import('@/views/projects/_index.vue')
     },
     {
-      path: `${route?.fullPath || '/'}experiencias`,
+      path: `/experiencias`,
       name: 'experiences',
       component: () => import('@/views/experiences/_index.vue')
     },
     {
-      path: `${route?.fullPath || '/'}curriculo`,
+      path: `/curriculo`,
       name: 'curriculum',
       component: () => import('@/views/curriculum/_index.vue')
     }
