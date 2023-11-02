@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
+const { fullPath } = useRoute()
 </script>
 
 <template>
@@ -9,10 +10,10 @@ import { RouterLink } from 'vue-router'
     <nav
       class="relative flex items-center border-t-4 border-black bg-white lg:m-auto lg:w-1/2 lg:border-4"
     >
-      <router-link to="/neo-portfolio">Home</router-link>
-      <router-link to="/neo-portfolio/projetos">Projetos</router-link>
-      <router-link to="/neo-portfolio/experiencias">Experiências</router-link>
-      <router-link to="/neo-portfolio/curriculo">Currículo</router-link>
+      <router-link :to="`${fullPath}`">Home</router-link>
+      <router-link :to="`${fullPath}projetos`">Projetos</router-link>
+      <router-link :to="`${fullPath}experiencias`">Experiências</router-link>
+      <router-link :to="`${fullPath}curriculo`">Currículo</router-link>
     </nav>
   </footer>
 </template>
