@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @media (hover: hover) {
+    button:hover,
+    a:hover {
+      @apply bg-electric-blue transition-colors;
+    }
+  }
+
+  /* --- THEMING --- */
+  :root {
+    --black: 1 20 4;
+    --white: 255 255 255;
+    --mint: 160 255 144;
+    --pale-blue: 149 235 223;
+    --electric-blue: 123 245 253;
+    --water: 208 251 251;
+    --lime: 236 250 155;
+    --yellow: 243 211 95;
+  }
+
+  /* [data-theme='dark'] {
+    --text: 248 248 255;
+    --background: 22 22 29;
+    --accent: var(--primary);
+  } */
+
+  @font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('./assets/SpaceGrotesk-Regular.ttf');
+    font-display: swap;
+  }
+
+  /* SCROLLBAR */
+  * {
+    scrollbar-width: 0;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 0rem;
+  }
+}
