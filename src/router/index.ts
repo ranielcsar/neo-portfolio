@@ -1,9 +1,9 @@
-import { createRouter, createMemoryHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/home/_index.vue'
 const path = window?.location.pathname
 
 const router = createRouter({
-  history: createMemoryHistory(path ?? ''),
+  history: createWebHistory(path ?? ''),
   linkActiveClass: 'active-link',
   routes: [
     {
